@@ -1,12 +1,28 @@
-import React from "react";
+import React, { Component } from "react";
+import Search from "./components/Search.jsx";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hi</h1>
-    </div>
-  );
+class App extends Component {
+  state = {
+    query: "",
+  };
+  handleSearch = (e) => {
+    e.preventDefault();
+  };
+  updateQuery = (query) => {
+    this.setState({ query });
+  };
+  render() {
+    return (
+      <div className="App">
+        <h1>Covid Proj</h1>
+        <Search
+          handleSearch={this.handleSearch}
+          updateQuery={this.updateQuery}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
