@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import Search from "./components/Search.jsx";
+import SingleCountry from "./components/SingleCountry.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 import axios from "axios";
-import "./App.css";
 
 class App extends Component {
   state = {
     query: "",
+    data: [],
   };
   handleQuery = (e) => {
     console.log(this.state.query);
@@ -20,7 +23,16 @@ class App extends Component {
         params,
       })
       .then((res) => {
-        console.log(res.data[0]);
+        let newData;
+        if (this.state.data.length == 0) {
+          newData = [res.data[0]];
+          this.setState({ data: newData });
+        } else {
+          let newData = [...this.state.data];
+          newData.push(res.data[0]);
+          this.setState({ data: newData });
+        }
+        console.log(this.state.data);
       })
       .catch((err) => {
         console.log(err);
@@ -31,15 +43,17 @@ class App extends Component {
   updateQuery = (query) => {
     this.setState({ query });
   };
+
   render() {
     return (
       <div className="App">
         <h1>Covid Project</h1>
         <Search handleQuery={this.handleQuery} updateQuery={this.updateQuery} />
-        <h3>Table style with percentage changes per day</h3>
-        <h2>Covid-19 Real-time Data by Country</h2>
-        <h2>Covid-19 Real-time Data by State (USA)</h2>
-        <h3>Updated every 15 minutes</h3>
+        {this.state.data.length != 0 ? (
+          <SingleCountry data={this.state.data[this.state.data.length - 1]} />
+        ) : (
+          <h2>Waiting for search..</h2>
+        )}
       </div>
     );
   }
