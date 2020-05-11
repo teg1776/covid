@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Table } from "react-bootstrap";
 
-const SingleCountry = (props) => {
+function SingleCountry(props) {
   const { country, confirmed, recovered, critical, deaths } = props.data;
   console.log(props);
   return (
@@ -27,6 +27,5 @@ const SingleCountry = (props) => {
       <tbody></tbody>
     </Table>
   );
-};
-
+}
 export default SingleCountry;
