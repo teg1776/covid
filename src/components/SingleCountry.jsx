@@ -20,7 +20,7 @@ function SingleCountry(props) {
       })
       .then((res) => {
         let newData;
-        if (data.length == 0) {
+        if (data.length === 0) {
           newData = [res.data[0]];
           setData(newData);
         } else {
@@ -58,11 +58,11 @@ function SingleCountry(props) {
             </thead>
             <tbody>
               <tr>
-                <td>{data.country}</td>
-                <td className="confirmed">{data.confirmed}</td>
-                <td className="recovered">{data.recovered}</td>
-                <td className="critical">{data.critical}</td>
-                <td className="deaths">{data.deaths}</td>
+                <td>{data[0].country}</td>
+                <td className="confirmed">{data[0].confirmed}</td>
+                <td className="recovered">{data[0].recovered}</td>
+                <td className="critical">{data[0].critical}</td>
+                <td className="deaths">{data[0].deaths}</td>
               </tr>
             </tbody>
             <tbody></tbody>
