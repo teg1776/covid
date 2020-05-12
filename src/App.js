@@ -1,21 +1,20 @@
 import React, { Component, useState, useEffect } from "react";
-import Search from "./components/Search.jsx";
+import Landing from "./components/Landing.jsx";
 import SingleCountry from "./components/SingleCountry.jsx";
+import AllCountries from "./components/AllCountries.jsx";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
-
 function App() {
   return (
     <div className="App">
-      <h1>Covid Project</h1>
       <Router>
         <div>
           <nav>
-            <li>
+            {/* <li>
               <Link to="/">Home</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/single">Specific Country</Link>
             </li>
@@ -24,9 +23,9 @@ function App() {
             </li>
           </nav>
           <Switch>
-            <Route path="/single">
-              <SingleCountry />
-            </Route>
+            <Route path="/single" component={SingleCountry} />
+            <Route path="/all" component={AllCountries} />
+            <Route path="*" component={Landing} />
           </Switch>
         </div>
       </Router>
