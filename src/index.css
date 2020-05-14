@@ -1,9 +1,3 @@
-body {
-  background: rgb(238, 238, 238);
-  padding: 10px;
-  color: red;
-}
-
 .confirmed {
   color: rgb(250, 250, 75);
 }
@@ -22,4 +16,64 @@ body {
 
 td {
   font-weight: bold;
+}
+
+/* Landing Page */
+.wrapper {
+  color: white;
+  text-shadow: 1.5px 1.5px rgb(56, 56, 56);
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(3, calc(100% / 3));
+}
+
+.one {
+  background-image: url("./media/us.png");
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.two {
+  background-image: url("./media/covid.png");
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.three {
+  background-image: url("./media/earth.jpg");
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.pages {
+  display: grid;
+  grid-template-rows: 72% 1fr;
+  justify-items: center;
+}
+.content {
+  grid-row-start: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content > h1 {
+  padding: 0 12px;
+}
+
+li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.btn {
+  padding-right: 50px;
+  padding-left: 50px;
+  color: white;
+  letter-spacing: 0.5px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
