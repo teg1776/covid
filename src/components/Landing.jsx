@@ -1,13 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Countries from "./Countries.jsx";
-import US from "./US.jsx";
-import World from "./World.jsx";
+import React, { useState, useEffect } from "react";
+import {Link } from "react-router-dom";
+
 
 function Landing() {
   return (
     <div>
-      <Router>
         <nav className="wrapper">
           <div className="one pages">
             <div className="content">
@@ -46,12 +43,6 @@ function Landing() {
             </div>
           </div>
         </nav>
-        <Switch>
-          <Route path="/US" component={US} />
-          <Route path="/countries" component={Countries} />
-          <Route path="/world" component={World} />
-        </Switch>
-      </Router>
     </div>
   );
 }
