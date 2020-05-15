@@ -116,6 +116,18 @@ li {
 
 .navLinks {
   font-size: x-large;
+  text-decoration: none;
+  color: rgb(146, 0, 0);
+  text-shadow: 1.5px 1.2px rgb(255, 255, 255);
+}
+
+.navLinks:link,
+.navLinks:visited,
+.navLinks:hover {
+  text-decoration: none;
+}
+
+.navLinks:visited {
   color: rgb(146, 0, 0);
   text-shadow: 1.5px 1.2px rgb(255, 255, 255);
 }
@@ -125,11 +137,6 @@ li {
   color: white;
   text-shadow: 1.5px 1.2px rgb(0, 0, 0);
 }
-
-.navLinks:visited {
-  text-decoration: none;
-}
-
 .main {
   margin-top: 7%; /* change this later */
 }
