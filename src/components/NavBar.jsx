@@ -25,21 +25,42 @@ function NavBar() {
       <nav class="navbar navbar-expand-lg">
         <div className="navContent">
           {path == "/Countries" ? (
-            <Link to="/World" className="navLinks">
+            <Link
+              to="/World"
+              className="navLinks"
+              style={{ justifySelf: "end" }}
+            >
               World
             </Link>
           ) : (
-            <Link to="/Countries" className="navLinks">
+            <Link
+              to="/Countries"
+              className="navLinks"
+              style={{ justifySelf: "end" }}
+            >
               Countries
             </Link>
           )}
-          <img className="logo" src={logo} alt="logo" />
+          <img
+            className="logo"
+            src={logo}
+            alt="logo"
+            style={{ justifySelf: "center" }}
+          />
           {path == "/US" ? (
-            <Link to="/World" className="navLinks">
+            <Link
+              to="/World"
+              className="navLinks"
+              style={{ justifySelf: "start" }}
+            >
               World
             </Link>
           ) : (
-            <Link to="/US" className="navLinks">
+            <Link
+              to="/US"
+              className="navLinks"
+              style={{ justifySelf: "start" }}
+            >
               US
             </Link>
           )}
