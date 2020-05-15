@@ -42,7 +42,7 @@ function SingleCountry(props) {
   };
 
   return (
-    <div>
+    <div className="main">
       {data.length > 0 ? (
         <div>
           <Search handleQuery={handleQuery} updateQuery={updateQuery} />

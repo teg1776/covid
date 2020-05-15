@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function US() {
-    return <div>US data</div>
-};
+  return <div className="main">US data</div>;
+}
 
 export default US;
